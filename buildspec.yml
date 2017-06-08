@@ -2,18 +2,17 @@ version: 0.2
 
 env:
   variables:
-    key: "value"
-    key: "value"
+    DEBUG: "0"
             
 phases:
   install:
     commands:
-      - command
-      - command
+      - sudo apt-get install gcc-4.9 g++-4.9
+      - sudo apt-get install build-essential zlib1g-dev libsdl1.2-dev libjpeg-dev nasm tar libbz2-dev libgtk2.0-dev cmake mercurial libfluidsynth-dev libgl1-mesa-dev libssl-dev libglew-dev 
   pre_build:
     commands:
-      - command
-      - command
+      - mkdir -p zandronum/build/{client,server}
+      - cd zandronum/ ; a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$a".tar.gz && tar -xvzf fmodapi42416linux"$a".tar.gz -C zandronum
   build:
     commands:
       - command

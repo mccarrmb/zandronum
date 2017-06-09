@@ -18,7 +18,7 @@ phases:
   pre_build:
     commands:
       - mkdir buildclient  && mkdir buildserver
-      - a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$a".tar.gz && tar -xvzf fmodapi42416linux"$a".tar.gz -C zandronum
+      - a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$a".tar.gz && tar -xvzf fmodapi42416linux"$a".tar.gz
   build:
     commands:
       - 

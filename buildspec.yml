@@ -28,9 +28,9 @@ phases:
       - make
   post_build:
     commands:
-      - 
+      - pwd && ls -l 
 artifacts:
   files:
-    - buildclient/*
+    - buildclient
   discard-paths: yes
   base-directory: location

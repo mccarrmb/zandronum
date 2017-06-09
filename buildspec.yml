@@ -17,9 +17,8 @@ phases:
       - sudo apt-get -y install zlib1g-dev libsdl1.2-dev libjpeg-dev nasm tar libbz2-dev libgtk2.0-dev cmake mercurial libfluidsynth-dev libgl1-mesa-dev libssl-dev libglew-dev 
   pre_build:
     commands:
-      - pwd
-      - mkdir -p zandronum/{buildclient,buildserver}
-      - cd zandronum/ ; a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$a".tar.gz && tar -xvzf fmodapi42416linux"$a".tar.gz -C zandronum
+      - mkdir buildclient  && mkdir buildserver
+      - a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$a".tar.gz && tar -xvzf fmodapi42416linux"$a".tar.gz -C zandronum
   build:
     commands:
       - 

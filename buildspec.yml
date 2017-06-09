@@ -24,7 +24,7 @@ phases:
   build:
     commands:
       - cd buildclient
-      - cmake -DCMAKE_BUILD_TYPE=Release -DFMOD_LIBRARY=`pwd`/../fmodapi42416linux"$a"/api/lib/libfmodex"$ARCH"-4.24.16.so -DFMOD_INCLUDE_DIR=`pwd`/../fmodapi42416linux"$ARCH"/api/inc .. 
+      - cmake -DCMAKE_BUILD_TYPE=Release -DFMOD_LIBRARY=`pwd`/../fmodapi42416linux"$ARCH"/api/lib/libfmodex"$ARCH"-4.24.16.so -DFMOD_INCLUDE_DIR=`pwd`/../fmodapi42416linux"$ARCH"/api/inc .. 
       - make
   post_build:
     commands:

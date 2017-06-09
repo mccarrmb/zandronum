@@ -21,6 +21,7 @@ phases:
     commands:
       - mkdir buildclient  && mkdir buildserver
       - wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$ARCH".tar.gz && tar -xvzf fmodapi42416linux"$ARCH".tar.gz
+      - ls -l
   build:
     commands:
       - cd buildclient

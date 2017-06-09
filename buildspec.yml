@@ -24,10 +24,10 @@ phases:
       - wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$ARCH".tar.gz && tar -xvzf fmodapi42416linux"$ARCH".tar.gz
   build:
     commands:
-      - cd buildclient && \
-        cmake \
-        -DCMAKE_BUILD_TYPE_=Release -DFMOD_LIBRARY=fmodapi42416linux"$a"/api/lib/libfmodex"$ARCH"-4.24.16.so \
-        -DFMOD_INCLUDE_DIR=fmodapi42416linux"$ARCH"/api/inc .. && make
+      - pushd buildclient
+      - cmake -DCMAKE_BUILD_TYPE_=Release -DFMOD_LIBRARY=fmodapi42416linux"$a"/api/lib/libfmodex"$ARCH"-4.24.16.so \
+        -DFMOD_INCLUDE_DIR=fmodapi42416linux"$ARCH"/api/inc .. 
+      - make
   post_build:
     commands:
       - 

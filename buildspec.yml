@@ -3,6 +3,8 @@ version: 0.2
 env:
   variables:
     DEBUG: "0"
+    CC: "gcc-4.9"
+    CXX: "g++-4.9"
             
 phases:
   install:
@@ -20,9 +22,13 @@ phases:
       - ls -l
       - mkdir buildclient  && mkdir buildserver
       - a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; wget -nc http://zandronum.com/essentials/fmod/fmodapi42416linux"$a".tar.gz && tar -xvzf fmodapi42416linux"$a".tar.gz
+      - make clean
   build:
     commands:
-      - 
+      - cd buildclient && \
+        a='' && [ "$(uname -m)" = x86_64 ] && a=64 ; \
+        cmake -DCMAKE_BUILD_TYPE_=Release -DFMOD_LIBRARY=fmodapi42416linux"$a"/api/lib/libfmodex"$a"-4.24.16.so \
+        -DFMOD_INCLUDE_DIR=fmodapi42416linux"$a"/api/inc .. && make
   post_build:
     commands:
       - 

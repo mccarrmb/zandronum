@@ -31,6 +31,6 @@ phases:
       - pwd && ls -l 
 artifacts:
   files:
-    - buildclient
+    - buildclient/zandronum
   discard-paths: yes
   base-directory: location

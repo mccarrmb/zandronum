@@ -28,9 +28,9 @@ phases:
       - make
   post_build:
     commands: 
-      - cd ..
+      - 
 artifacts:
   files:
-    - /*
+    - zandronum
   discard-paths: yes
   base-directory: location

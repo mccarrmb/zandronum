@@ -30,7 +30,7 @@ phases:
       - make
       - make clean
       - cd ../buildserver
-      - cmake -DCMAKE_BUILD_TYPE=Release -DSERVERONLY=ON ..
+      - cmake -DCMAKE_BUILD_TYPE=MinSizeRel -DSERVERONLY=ON ..
       - make
   post_build:
     commands: 

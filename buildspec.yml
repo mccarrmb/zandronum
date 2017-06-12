@@ -31,6 +31,6 @@ phases:
       - 
 artifacts:
   files:
-    - zandronum
+    - '**/*'
   discard-paths: yes
   base-directory: buildclient

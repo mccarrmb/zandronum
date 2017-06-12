@@ -26,11 +26,13 @@ phases:
       - cd buildclient
       - cmake -DCMAKE_BUILD_TYPE=Release -DFMOD_LIBRARY=`pwd`/../fmodapi42416linux"$ARCH"/api/lib/libfmodex"$ARCH"-4.24.16.so -DFMOD_INCLUDE_DIR=`pwd`/../fmodapi42416linux"$ARCH"/api/inc .. 
       - make
+      - cd ../buildserver
+      - cmake -DCMAKE_BUILD_TYPE=Release -DSERVERONLY=ON ..
+      - make
   post_build:
     commands: 
       - 
 artifacts:
   files:
-    - '**/*'
-  discard-paths: yes
-  base-directory: buildclient
+    - 'buildclient/*'
+    - 'buildserver/*'

@@ -33,4 +33,4 @@ artifacts:
   files:
     - zandronum
   discard-paths: yes
-  base-directory: location
+  base-directory: buildclient

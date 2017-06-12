@@ -27,10 +27,10 @@ phases:
       - cmake -DCMAKE_BUILD_TYPE=Release -DFMOD_LIBRARY=`pwd`/../fmodapi42416linux"$ARCH"/api/lib/libfmodex"$ARCH"-4.24.16.so -DFMOD_INCLUDE_DIR=`pwd`/../fmodapi42416linux"$ARCH"/api/inc .. 
       - make
   post_build:
-    commands:
-      - pwd && ls -l 
+    commands: 
+      - cd ..
 artifacts:
   files:
-    - buildclient/zandronum
+    - buildclient/*
   discard-paths: yes
   base-directory: location
